@@ -143,6 +143,7 @@ public class MusicSchoolDAO {
                     result.getDate(LAST_DATE_OF_LEASE_COLUMN_NAME).toLocalDate(),
                     (result.getDate(END_OF_RENT_COLUMN_NAME) != null)? result.getDate(END_OF_RENT_COLUMN_NAME).toLocalDate() : null
                 );
+            connection.commit();
         } catch (SQLException exception) {
             handleException(failureMsg, exception);
         } finally {
@@ -209,8 +210,7 @@ public class MusicSchoolDAO {
                 handleException ( failureMsg, null );
             connection.commit();
         } catch (SQLException exception) {
-            System.out.println(exception.getMessage());
-            handleException( failureMsg, null );
+            handleException( failureMsg, exception );
         }
     }
 
@@ -246,7 +246,7 @@ public class MusicSchoolDAO {
                 handleException( failureMsg, null );
             connection.commit();
         } catch (SQLException exception) {
-            exception.printStackTrace();
+            handleException( failureMsg, exception );
         }
     }
 
