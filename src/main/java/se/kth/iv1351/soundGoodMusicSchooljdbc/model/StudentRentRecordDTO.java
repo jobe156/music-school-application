@@ -10,7 +10,7 @@ public class StudentRentRecordDTO {
     int studentId;
     int instrumentRecordId;
     LocalDate dateOfRent;
-    LocalDate lastDateOfLease;
+    LocalDate lastDateOfRent;
     LocalDate endOfRent;
 
     /**
@@ -23,7 +23,7 @@ public class StudentRentRecordDTO {
         this.studentId = studentRentRecord.getStudentId();
         this.instrumentRecordId = studentRentRecord.getInstrumentRecordId();
         this.dateOfRent = studentRentRecord.getDateOfRentAsLocalDate();
-        this.lastDateOfLease = studentRentRecord.getLastDateOfLeaseAsLocalDate();
+        this.lastDateOfRent = studentRentRecord.getLastDateOfRentAsLocalDate();
         this.endOfRent = studentRentRecord.getEndOfRentAsLocalDate();
     }
 
@@ -63,8 +63,8 @@ public class StudentRentRecordDTO {
      * Returns the last date of lease  as an <code>LocalDate</code> instance.
      * @return last date of lease.
      */
-    public LocalDate getLastDateOfLeaseAsLocalDate () {
-        return lastDateOfLease;
+    public LocalDate getLastDateOfRentAsLocalDate() {
+        return lastDateOfRent;
     }
 
     /**
@@ -87,8 +87,8 @@ public class StudentRentRecordDTO {
      * Returns the last date of lease as a <code>java.sql.Date</code> instance.
      * @return last date of lease.
      */
-    public java.sql.Date getLastDateOfLeaseAsDate () {
-        return java.sql.Date.valueOf( this.lastDateOfLease );
+    public java.sql.Date getLastDateOfRentAsDate() {
+        return java.sql.Date.valueOf( this.lastDateOfRent);
     }
 
     /**

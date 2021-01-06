@@ -26,7 +26,7 @@ public class MusicSchoolDAO {
     private static final String BRAND_COLUMN_NAME = "brand";
     private static final String STUDENT_ID_COLUMN_NAME = "student_id";
     private static final String DATE_OF_RENT_COLUMN_NAME = "date_of_rent";
-    private static final String LAST_DATE_OF_LEASE_COLUMN_NAME = "last_date_of_lease";
+    private static final String LAST_DATE_OF_LEASE_COLUMN_NAME = "last_date_of_rent";
     private static final String END_OF_RENT_COLUMN_NAME = "end_of_rent";
     private static final String STUDENT_RENT_RECORD_ID_COLUMN_NAME = "student_rent_record_id";
 
@@ -193,7 +193,7 @@ public class MusicSchoolDAO {
             createStudentRentRecordStmt.setInt(1, studentRentRecordDto.getInstrumentRecordId());
             createStudentRentRecordStmt.setInt(2, studentRentRecordDto.getStudentId());
             createStudentRentRecordStmt.setDate(3, studentRentRecordDto.getDateOfRentAsDate());
-            createStudentRentRecordStmt.setDate(4, studentRentRecordDto.getLastDateOfLeaseAsDate());
+            createStudentRentRecordStmt.setDate(4, studentRentRecordDto.getLastDateOfRentAsDate());
             updatedRows = createStudentRentRecordStmt.executeUpdate();
             if ( updatedRows != 1 )
                 handleException (failureMsg, null );
@@ -228,7 +228,7 @@ public class MusicSchoolDAO {
             updateStudentRentRecordStmt.setInt(1,  studentRentRecordDTO.getInstrumentRecordId());
             updateStudentRentRecordStmt.setInt(2,  studentRentRecordDTO.getStudentId());
             updateStudentRentRecordStmt.setDate(3,  studentRentRecordDTO.getDateOfRentAsDate());
-            updateStudentRentRecordStmt.setDate(4,  studentRentRecordDTO.getLastDateOfLeaseAsDate());
+            updateStudentRentRecordStmt.setDate(4,  studentRentRecordDTO.getLastDateOfRentAsDate());
             updateStudentRentRecordStmt.setDate(5,  studentRentRecordDTO.getEndOfDateAsDate());
             updateStudentRentRecordStmt.setInt(6,  studentRentRecordDTO.getStudentRentRecordId());
             updatedRows = updateStudentRentRecordStmt.executeUpdate();

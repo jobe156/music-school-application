@@ -12,7 +12,7 @@ public class StudentRentRecord {
     int studentId;
     int instrumentRecordId;
     LocalDate dateOfRent;
-    LocalDate lastDateOfLease;
+    LocalDate lastDateOfRent;
     LocalDate endOfRent;
 
 
@@ -25,7 +25,7 @@ public class StudentRentRecord {
         this.studentId = studentId;
         this.instrumentRecordId = instrumentRecordId;
         this.dateOfRent = LocalDate.now();
-        this.lastDateOfLease = LocalDate.now().plusYears(1);
+        this.lastDateOfRent = LocalDate.now().plusYears(1);
         this.endOfRent = null;
     }
 
@@ -44,7 +44,7 @@ public class StudentRentRecord {
         this.studentId = studentId;
         this.instrumentRecordId = instrumentRecordId;
         this.dateOfRent = dateOfRent;
-        this.lastDateOfLease = lastDateOfLease;
+        this.lastDateOfRent = lastDateOfLease;
         this.endOfRent = endOfDate;
     }
 
@@ -95,8 +95,8 @@ public class StudentRentRecord {
      * Returns the last date of lease  as an <code>LocalDate</code> instance.
      * @return last date of lease.
      */
-    public LocalDate getLastDateOfLeaseAsLocalDate () {
-        return lastDateOfLease;
+    public LocalDate getLastDateOfRentAsLocalDate() {
+        return lastDateOfRent;
     }
 
     /**
@@ -119,8 +119,8 @@ public class StudentRentRecord {
      * Returns the last date of lease as a <code>java.sql.Date</code> instance.
      * @return last date of lease.
      */
-    public java.sql.Date getLastDateOfLeaseAsDate () {
-        return java.sql.Date.valueOf( this.lastDateOfLease );
+    public java.sql.Date getLastDateOfRentAsDate() {
+        return java.sql.Date.valueOf( this.lastDateOfRent);
     }
 
     /**
